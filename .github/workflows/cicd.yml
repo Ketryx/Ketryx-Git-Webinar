@@ -46,7 +46,7 @@ jobs:
           path: test-results/
           retention-days: 7
           if-no-files-found: error
-      - name: Report build to Ketryx
+      - name: Report JS build to Ketryx
         uses: Ketryx/ketryx-github-action@v1
         if: fromJSON(env.SHOULD_DEPLOY) && (success() || failure())
         with:
@@ -84,7 +84,7 @@ jobs:
           path: java-src/build/test-results/test/
           retention-days: 7
           if-no-files-found: error
-      - name: Report build to Ketryx
+      - name: Report Java build to Ketryx
         uses: Ketryx/ketryx-github-action@v1
         if: fromJSON(env.SHOULD_DEPLOY) && (success() || failure())
         with:
