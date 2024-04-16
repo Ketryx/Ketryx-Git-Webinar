@@ -10,11 +10,7 @@ env:
         github.ref == 'refs/heads/production'
       )
     }}
-on:
-  push:
-    branches:
-      - production
-      - '*'
+on: push
 
 jobs:
   test:
