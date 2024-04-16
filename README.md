@@ -46,16 +46,22 @@ npm install
 
 ## Running Tests
 
+Run unit and integration tests:
+
+```bash
+npm run test:unit-integration-ci
+```
+
 Run tests in watch mode:
 
 ```bash
 npm test
 ```
 
-Run tests once:
+Run end-to-end tests:
 
 ```bash
-npm run test:unit-integration-ci
+npm run test:e2e
 ```
 
 Run Java unit tests:
