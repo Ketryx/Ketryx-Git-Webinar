@@ -1,5 +1,5 @@
 ---
-itemId: tc-2
+itemId: test-feedback-form
 itemType: Test Case
 itemTests: spec-feedback-form
 ---

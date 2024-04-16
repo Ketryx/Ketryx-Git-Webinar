@@ -4,7 +4,6 @@ import "server-only";
  * Adds two numbers.
  *
  * @itemTitle:"Number adder"
- * @itemId:add-numbers
  *
  * @param a First number to add.
  * @param b Second number to add.
