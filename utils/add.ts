@@ -1,7 +1,7 @@
 import "server-only";
 
 /**
- * Adds two numbers.
+ * Adds two numbers
  *
  * @itemTitle:"Number adder"
  * @itemId:add-numbers
