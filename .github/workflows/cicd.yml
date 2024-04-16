@@ -39,7 +39,7 @@ jobs:
           retention-days: 7
           if-no-files-found: error
       - name: Report JS build to Ketryx
-        uses: Ketryx/ketryx-github-action@v1
+        uses: Ketryx/ketryx-github-action@v1.2.0
         if: success() || failure()
         with:
           ketryx-url: ${{ vars.KETRYX_URL }}
@@ -76,7 +76,7 @@ jobs:
           retention-days: 7
           if-no-files-found: error
       - name: Report Java build to Ketryx
-        uses: Ketryx/ketryx-github-action@v1
+        uses: Ketryx/ketryx-github-action@v1.2.0
         if: success() || failure()
         with:
           ketryx-url: ${{ vars.KETRYX_URL }}
@@ -92,7 +92,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Check version status in Ketryx
-        uses: Ketryx/ketryx-github-action@v1
+        uses: Ketryx/ketryx-github-action@v1.2.0
         if: success() || failure()
         with:
           ketryx-url: ${{ vars.KETRYX_URL }}
