@@ -1,4 +1,4 @@
-# Ketryx Git Webinar
+# Ketryx Git Webinar Sample Repository
 
 This is a sample repository highlighting the [Ketryx Platform](https://www.ketryx.com/platform) features around [Git-based configuration items](https://docs.ketryx.com/manuals/man-09-git-based-configuration-items) for our [webinar about Git for IEC 62304](https://www.linkedin.com/posts/ketryx_register-today-activity-7181351604917280768-RTpJ/).
 
