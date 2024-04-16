@@ -45,7 +45,7 @@ jobs:
         with:
           ketryx-url: https://ketryx-miland.eu.ngrok.io
           project: KXPRJ7AT2WY98B59Y5AHZW1KW0KZGQP
-          api-key: ${{ secrets.KETRYX_API_KEY }}
+          api-key: KXTK_90NDVRSPTRJJGP5FKQ0MYRJJJNEB0HJP2SA8D8NQYJBPCP05EQB3EED27CPYG4XCKMM150QQHWGMK
           version: ${{ vars.KETRYX_VERSION }}
           build-name: ci
           test-junit-path: test-results/jest-junit.xml
