@@ -44,7 +44,7 @@ jobs:
         if: fromJSON(env.SHOULD_DEPLOY) && (success() || failure())
         with:
           ketryx-url: https://ketryx-miland.eu.ngrok.io
-          project: KXPRJ7AT2WY98B59Y5AHZW1KW0KZGQP
+          project: KXPRJ6504HQPM6W984T43VCD4GY5X8K
           api-key: KXTK_90NDVRSPTRJJGP5FKQ0MYRJJJNEB0HJP2SA8D8NQYJBPCP05EQB3EED27CPYG4XCKMM150QQHWGMK
           build-name: ci
           test-junit-path: test-results/jest-junit.xml
