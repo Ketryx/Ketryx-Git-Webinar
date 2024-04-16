@@ -100,5 +100,4 @@ jobs:
           api-key: ${{ secrets.KETRYX_API_KEY }}
           commit-sha: ${{ github.event.pull_request.head.sha }}
           build-name: check-pr
-          check-item-association: true
           check-release-status: true
