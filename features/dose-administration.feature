@@ -1,5 +1,6 @@
 Feature: Dose administration
 
+  @tests:spec-dose-administration
   @tests:spec-dose-reading-warning
   Scenario: Test infusion limitations
     Given iOS application is open
