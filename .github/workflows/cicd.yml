@@ -1,26 +1,25 @@
 name: CI/CD Build
 
-env:
-  SHOULD_DEPLOY: >-
-    ${{
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
-      (
-        github.ref == 'refs/heads/main'||
-        github.ref == 'refs/heads/miland/cucumber_debug'||
-        github.ref == 'refs/heads/production'
-      )
-    }}
-on: push
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - '*'
 
 jobs:
-  test:
+  test-js:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - name: Cache dependencies
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./node_modules
           key: modules-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package.json', 'package-lock.json') }}
@@ -32,20 +31,74 @@ jobs:
       - name: Run end-to-end tests
         run: npm run test:e2e
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: success() || failure()
         with:
-          name: test-results
+          name: test-results-js
           path: test-results/
           retention-days: 7
           if-no-files-found: error
-      - name: Report build to Ketryx
+      - name: Report JS build to Ketryx
         uses: Ketryx/ketryx-github-action@v1
-        if: fromJSON(env.SHOULD_DEPLOY) && (success() || failure())
+        if: success() || failure()
         with:
-          ketryx-url: https://ketryx-miland.eu.ngrok.io
-          project: KXPRJ1X640T5G9X96TSCBP83Q4GC1RB
-          api-key: KXTK_90NDVRSPTRJJGP5FKQ0MYRJJJNEB0HJP2SA8D8NQYJBPCP05EQB3EED27CPYG4XCKMM150QQHWGMK
-          build-name: ci
+          ketryx-url: ${{ vars.KETRYX_URL }}
+          project: ${{ vars.KETRYX_PROJECT }}
+          api-key: ${{ secrets.KETRYX_API_KEY }}
+          build-name: ci-js
           test-junit-path: test-results/jest-junit.xml
           test-cucumber-path: test-results/cucumber-report.json
+
+  test-java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: temurin
+          architecture: x64
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.6'
+      - name: Run Java unit tests
+        working-directory: java-src
+        run: ./gradlew test
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: test-results-java
+          path: java-src/build/test-results/test/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Report Java build to Ketryx
+        uses: Ketryx/ketryx-github-action@v1
+        if: success() || failure()
+        with:
+          ketryx-url: ${{ vars.KETRYX_URL }}
+          project: ${{ vars.KETRYX_PROJECT }}
+          api-key: ${{ secrets.KETRYX_API_KEY }}
+          build-name: ci-java
+          test-junit-path: java-src/build/test-results/test/*.xml
+
+  check-pr:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check version status in Ketryx
+        uses: Ketryx/ketryx-github-action@v1
+        if: success() || failure()
+        with:
+          ketryx-url: ${{ vars.KETRYX_URL }}
+          project: ${{ vars.KETRYX_PROJECT }}
+          api-key: ${{ secrets.KETRYX_API_KEY }}
+          commit-sha: ${{ github.event.pull_request.head.sha }}
+          build-name: check-pr
+          check-item-association: true
+          check-release-status: true
