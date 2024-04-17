@@ -1,13 +1,13 @@
 package com.ketryx.sample;
 
 /**
- * Utility class to add two numbers.
+ * Utility class to calculate dose.
  *
- * @itemId:AddNumbers
+ * @itemId:DoseCalculation
  * @itemTitle:"Dose calculation"
  */
-public class AddNumbers {
-    public static int addNumbers(int a, int b) {
+public class DoseCalculation {
+    public static int calculateDose(int a, int b) {
         return a + b;
     }
 }
