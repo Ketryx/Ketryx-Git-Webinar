@@ -4,6 +4,7 @@ itemType: Software Item Spec
 itemFulfills: req-patient-app-ui,KW-3
 itemHasParent: KW-10
 itemIntroducesRisk: KW-6
+itemUses: DoseCalculation
 ---
 
 # Dose administration
