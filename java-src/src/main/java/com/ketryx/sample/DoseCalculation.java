@@ -5,6 +5,7 @@ package com.ketryx.sample;
  *
  * @itemId:DoseCalculation
  * @itemTitle:"Dose calculation"
+ * @itemHasParent:KW-9
  */
 public class DoseCalculation {
     public static int calculateDose(int a, int b) {

@@ -6,7 +6,7 @@
  * @itemId:spec-dose-reading-warning
  * @itemTitle:"Insulin Dose and Glucose Reading Warning"
  * @itemFulfills:req-patient-app-ui,KW-3
- * @itemParents:spec-dose-administration
+ * @itemHasParent:spec-dose-administration
  */
 export function createDoseWarning() {
 }
