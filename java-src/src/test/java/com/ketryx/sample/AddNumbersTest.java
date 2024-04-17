@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AddNumbersTest {
+public class DoseCalculationTest {
     /**
      * Tests that dose is computed correctly.
-     * @tests:AddNumbers
-     * @itemTitle:"Test Dose Calcuation
+     * @tests:DoseCalculation
+     * @itemTitle:"Test Dose Calculation"
      */
     @Test
-    public void addNumbersTest() {
-        assertEquals(3, AddNumbers.addNumbers(1, 2));
+    public void doseCalculationTest() {
+        assertEquals(3, DoseCalculation.calculateDose(1, 2));
     }
 }
