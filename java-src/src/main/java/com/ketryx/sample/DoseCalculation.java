@@ -1,7 +1,7 @@
 package com.ketryx.sample;
 
 /**
- * Utility class to calculate dose.
+ * Utility class to calculate dose multiplication.
  *
  * @itemId:DoseCalculation
  * @itemTitle:"Dose calculation"
@@ -9,6 +9,6 @@ package com.ketryx.sample;
  */
 public class DoseCalculation {
     public static int calculateDose(int a, int b) {
-        return a + b;
+        return a * b;
     }
 }
