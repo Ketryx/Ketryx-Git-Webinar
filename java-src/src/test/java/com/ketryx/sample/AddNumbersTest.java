@@ -6,8 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AddNumbersTest {
     /**
-     * Tests that two numbers can be added correctly.
+     * Tests that dose is computed correctly.
      * @tests:AddNumbers
+     * @itemTitle:"Test Dose Calcuation
      */
     @Test
     public void addNumbersTest() {
