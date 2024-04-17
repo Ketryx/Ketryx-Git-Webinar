@@ -42,9 +42,9 @@ jobs:
         uses: Ketryx/ketryx-github-action@v1
         if: success() || failure()
         with:
-          ketryx-url: ${{ vars.KETRYX_URL }}
-          project: ${{ vars.KETRYX_PROJECT }}
-          api-key: ${{ secrets.KETRYX_API_KEY }}
+          ketryx-url: https://ketryx-miland.eu.ngrok.io/
+          project: KXPRJ1JVWWK94T890XVHDDVZ2EBVVCY
+          api-key: KXTK_4N2MVCF48PKZ1QRZKJ6ZKJKQ3KGMYPETVGYDFAT5PSTVVTR5ND1Z5MX7K3D4BHQB4419RE2EPFP6J
           build-name: ci-js
           test-junit-path: test-results/jest-junit.xml
           test-cucumber-path: test-results/cucumber-report.json
