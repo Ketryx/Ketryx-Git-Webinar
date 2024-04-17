@@ -2,6 +2,7 @@
 itemId: spec-dose-administration
 itemType: Software Item Spec
 itemFulfills: req-patient-app-ui,KW-3
+itemParents: KW-10
 itemIntroducesRisk: KW-6
 ---
 

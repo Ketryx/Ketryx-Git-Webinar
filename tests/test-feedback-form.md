@@ -1,7 +1,7 @@
 ---
 itemId: test-feedback-form
 itemType: Test Case
-itemTests: spec-feedback-form
+itemTests: spec-feedback-form, KW-10
 ---
 
 # Test user feedback form
