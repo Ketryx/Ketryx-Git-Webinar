@@ -1,7 +1,7 @@
 package com.ketryx.sample;
 
 /**
- * Utility class to calculate dose.
+ * Utility class to calculate dose by simple arithmetic.
  *
  * @itemId:DoseCalculation
  * @itemTitle:"Dose calculation"
