@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DoseCalculationTest {
     /**
-     * Tests that dose is computed correctly.
+     * Tests that the dose is computed correctly.
      * @tests:DoseCalculation
      * @itemTitle:"Test Dose Calculation"
      */
