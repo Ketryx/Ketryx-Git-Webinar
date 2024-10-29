@@ -8,7 +8,7 @@ public class DoseCalculationTest {
     /**
      * Tests that dose is computed correctly.
      * @tests:DoseCalculation
-     * @itemTitle:"Test Dose Calculation"
+     * @itemTitle:"Verify Dose Calculation"
      */
     @Test
     public void doseCalculationTest() {
