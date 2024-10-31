@@ -8,7 +8,7 @@ itemTests: spec-feedback-form, KW-10
 
 The purpose of a feedback form in an iOS app is to allow users to provide feedback, suggestions, and report any issues they may have encountered while using the app.
 
-The feedback form should contain the following fields:
+The feedback form should contain all the following fields:
 
 - full name
 - email address
